@@ -53,7 +53,7 @@
   <script src="js/Common/Modules/ConnectivityModule.js"					type="text/javascript"></script>
   <script src="js/Common/Modules/CategoryModule.js"					type="text/javascript"></script>
   <script src="js/Common/Modules/WakeUpCallModule.js"					type="text/javascript"></script>
-  <script src="js/Common/Modules/FeedbackModule.js"					type="text/javascript"></script>
+  <script src="js/Common/Modules/FeedbackModule.js"					type="text/javascript"></script-->
   <script src="js/Common/Modules/SettingsModule.js"					type="text/javascript"></script>
   <script src="js/Common/Modules/SettingsLanguageModule.js"					type="text/javascript"></script>
 	<!--script src="js/app.js"					type="text/javascript"></script-->
@@ -247,6 +247,7 @@
           event.preventDefault();
           event.stopPropagation();
           window.SettingsModule.handleKeyDown(event);
+          window.SettingsModule.renderOptions();
         };
       };
       window.vm.settingsLanguageVM = function(route, param) {
@@ -256,13 +257,14 @@
           event.preventDefault();
           event.stopPropagation();
           window.SettingsLanguageModule.handleKeyDown(event);
+          window.SettingsLanguageModule.renderOptions();
         };
       };
       window.vm.navigateTo = function(hash) {
         $.cookie("hash", hash);
         var categoriesRegex = /categories\/(.+)/;
         var page = hash.split("/").pop();
-        
+        $('#header .logo').html(page)
         if (page === "welcome") {
           window.vm.welcomeVM();
         } else if (page === "") {
@@ -273,10 +275,6 @@
           window.vm.connectivityVM();
         } else if (categoriesRegex.test(hash)) {
           window.vm.categoryVM(hash);
-        } else if (page === "product") {
-          window.vm.productVM();
-        } else if (page === "productDetail") {
-          window.vm.productDetailVM();
         } else if (page === "wake-up-call") {
           window.vm.wakeUpCallVM();
         } else if (page === "feedback") {
@@ -284,6 +282,7 @@
         } else if (page === "settings") {
           window.vm.settingsVM();
         } else if (page === "settings-language") {
+          $('#header .logo').html(page)
           window.vm.settingsLanguageVM();
         }
       };
