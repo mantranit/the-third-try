@@ -49,8 +49,8 @@
   <script src="js/Common/Modules/KeyboardModule.js"					type="text/javascript"></script>
   <script src="js/Common/Modules/WelcomeModule.js"					type="text/javascript"></script>
   <script src="js/Common/Modules/HomeModule.js"					type="text/javascript"></script>
-  <!--script src="js/Common/Modules/TelevisionModule.js"					type="text/javascript"></script>
-  <script src="js/Common/Modules/ConnectivityModule.js"					type="text/javascript"></script>
+  <script src="js/Common/Modules/TelevisionModule.js"					type="text/javascript"></script>
+  <!--script src="js/Common/Modules/ConnectivityModule.js"					type="text/javascript"></script>
   <script src="js/Common/Modules/CategoryModule.js"					type="text/javascript"></script>
   <script src="js/Common/Modules/WakeUpCallModule.js"					type="text/javascript"></script>
   <script src="js/Common/Modules/FeedbackModule.js"					type="text/javascript"></script-->
@@ -186,14 +186,14 @@
 
       window.vm.televisionVM = function(route, param) {
         window.TelevisionModule.renderPage();
-        window.TelevisionModule.initIPTVPlayer();
         window.TelevisionModule.renderChannels();
-        window.TelevisionModule.renderCursor();
-        window.TelevisionModule.renderCategories();
+        window.TelevisionModule.initIPTVPlayer();
+        //window.TelevisionModule.renderCursor();
+        //window.TelevisionModule.renderCategories();
         document.body.onkeydown = function(event) {
           event.preventDefault();
           event.stopPropagation();
-          window.TelevisionModule.handleKeyDown(event);
+          //window.TelevisionModule.handleKeyDown(event);
         };
       };
 

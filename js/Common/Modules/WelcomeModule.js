@@ -2,7 +2,6 @@ $(function() {
   var WelcomeModule = {
     handleKeyDown: function(event) {
       if (!$("#welcomePage").is(":visible")) {
-        $("#header .logo").html(event.keyCode);
         return;
       }
       const keyCode = event.keyCode;
