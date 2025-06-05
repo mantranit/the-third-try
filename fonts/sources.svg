@@ -1,0 +1,59 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20201107 at Mon Jan 17 16:22:53 2022
+ By 
+</metadata>
+<defs>
+<font id="sources" horiz-adv-x="1024" >
+  <font-face 
+    font-family="sources"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="1024"
+    panose-1="0 0 0 0 0 0 0 0 0 0"
+    ascent="896"
+    descent="-128"
+    bbox="0 -128 1024 896.286"
+    underline-thickness="0"
+    underline-position="0"
+    unicode-range="U+0001-FFFD"
+  />
+<missing-glyph 
+ />
+    <glyph glyph-name=".notdef" unicode="&#xfffd;" 
+ />
+    <glyph glyph-name="glyph1" horiz-adv-x="0" 
+d="M0 0v0v0v0z" />
+    <glyph glyph-name="glyph1" horiz-adv-x="0" 
+d="M0 0v0v0v0z" />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="341" 
+ />
+    <glyph glyph-name="uni0001" horiz-adv-x="0" 
+d="M0 0v0v0v0z" />
+    <glyph glyph-name="space" unicode=" " horiz-adv-x="0" 
+d="M0 0v0v0v0z" />
+    <glyph glyph-name="uniE900" unicode="&#xe900;" 
+d="M256 -43h512l-256 256zM896 768h-768q-35 0 -60 -25t-25 -60v-512q0 -36 25 -61t60 -25h171v86h-171v512h768v-512h-171v-86h171q35 0 60 25t25 61v512q0 35 -25 60t-60 25z" />
+    <glyph glyph-name="uniE901" unicode="&#xe901;" 
+d="M896 768h-768q-35 0 -60 -25t-25 -60v-128h85v128h768v-598h-299v-85h299q35 0 60 25t25 60v598q0 35 -25 60t-60 25zM43 128v-128h128q0 53 -37.5 90.5t-90.5 37.5zM43 299v-86q44 0 83 -16q39 -17 67.5 -46t45.5 -68t17 -83h85q0 62 -23 116q-24 55 -64.5 95.5
+t-94.5 63.5q-54 24 -116 24v0zM43 469v-85q79 0 149 -30t122 -82.5t82 -122.5q31 -69 31 -149h85q0 97 -37 183q-37 85 -100.5 149t-149.5 100q-85 37 -182 37v0z" />
+    <glyph glyph-name="uniE902" unicode="&#xe902;" 
+d="M469 -128h86v85h-86v-85v0zM299 -128h85v85h-85v-85v0zM640 -128h85v85h-85v-85zM756 652l-244 244h-43v-324l-196 196l-60 -60l239 -239l-239 -238l60 -60l196 196v-324h43l244 243l-184 183zM555 733l80 -81l-80 -80v161v0zM635 286l-80 -80v161l80 -81v0z" />
+    <glyph glyph-name="uniE903" unicode="&#xe903;" 
+d="M768 597v128q0 36 -25 61t-60 25h-342q-35 0 -60 -25t-25 -61v-128h-43v-256l128 -256v-128h342v128l128 256v256h-43v0zM341 725h342v-128h-86v86h-43v-86h-85v86h-42v-86h-86v128v0zM725 361l-128 -256v-62h-170v62l-128 256v151h426v-151v0z" />
+    <glyph glyph-name="uniE904" unicode="&#xe904;" 
+d="M640 597v-170h43v-86h-128v342h85l-128 170l-128 -170h85v-342h-128v89q23 11 37.5 33t14.5 49q0 39 -28 66.5t-66 27.5q-39 0 -66.5 -27.5t-27.5 -66.5q0 -27 14.5 -49t36.5 -33v-89q0 -35 25 -60t60 -25h128v-130q-22 -12 -36.5 -34t-14.5 -49q0 -39 27.5 -66.5
+t66.5 -27.5t66.5 27.5t27.5 66.5q0 27 -14.5 49t-36.5 34v130h128q35 0 60 25t25 60v86h43v170h-171v0z" />
+    <glyph glyph-name="uniE905" unicode="&#xe905;" 
+d="M256 128q0 -18 12.5 -30.5t30.5 -12.5h42v-149q0 -27 19 -45.5t45 -18.5q27 0 45.5 18.5t18.5 45.5v149h86v-149q0 -27 18.5 -45.5t45.5 -18.5q26 0 45 18.5t19 45.5v149h42q18 0 30.5 12.5t12.5 30.5v427h-512v-427v0zM149 555q-26 0 -45 -19t-19 -45v-299
+q0 -27 19 -45.5t45 -18.5q27 0 45.5 18.5t18.5 45.5v299q0 26 -18.5 45t-45.5 19zM875 555q-27 0 -45.5 -19t-18.5 -45v-299q0 -27 18.5 -45.5t45.5 -18.5q26 0 45 18.5t19 45.5v299q0 26 -19 45t-45 19zM663 804l55 55q6 7 6 15.5t-6 15.5q-6 6 -15 6t-15 -6l-63 -64
+q-26 13 -54.5 20t-58.5 7q-31 0 -59.5 -7t-53.5 -20l-64 64q-6 6 -15 6t-15 -6q-7 -7 -7 -15.5t7 -15.5l56 -56q-48 -34 -76.5 -88t-28.5 -118h512q0 64 -28.5 118t-76.5 89v0zM427 683h-43v42h43v-42v0zM640 683h-43v42h43v-42z" />
+    <glyph glyph-name="uniE906" unicode="&#xe906;" 
+d="M502 659q-16 0 -27 -11.5t-11 -27.5v-158q0 -17 11 -28.5t27 -11.5t27.5 11.5t11.5 28.5v158q0 16 -11.5 27.5t-27.5 11.5zM39 659q-16 0 -27.5 -11.5t-11.5 -27.5v-158q0 -17 11.5 -28.5t27.5 -11.5t27 11.5t11 28.5v158q0 16 -11 27.5t-27 11.5zM97 442q0 -25 17 -42
+t41 -17v0v-79q0 -17 11 -28.5t27 -11.5t27.5 11.5t11.5 28.5v79h77v-79q0 -17 11.5 -28.5t27.5 -11.5t27 11.5t11 28.5v79q24 0 41 17t17 42v217h-347v-217v0zM443 699q-4 40 -25 74t-53 55l19 39q4 8 1.5 15.5t-9.5 11.5t-15 1t-11 -10l-20 -40l-5 2q-13 5 -26.5 7.5
+t-28.5 2.5q-14 0 -27.5 -2.5t-26.5 -7.5l-5 -2l-20 40q-3 7 -11 10t-15 -1t-9.5 -11.5t1.5 -15.5l19 -39q-32 -21 -53 -55t-25 -74v-20h346v20h-1v0zM213 738q-8 0 -14 6t-6 14t5.5 14t13.5 6h1v0v0v0q8 0 13.5 -6t5.5 -14t-5.5 -14t-13.5 -6zM328 738q-8 0 -13.5 6t-5.5 14
+t5.5 14t13.5 6v0v0v0v0q8 0 14 -6t6 -14t-6 -14t-14 -6zM445 188l-1 192l232 33v-225h-231zM715 418l309 46v-276h-309v230zM1024 148v-276l-309 44v232h309zM676 -79l-231 33v194h231v-227z" />
+  </font>
+</defs></svg>

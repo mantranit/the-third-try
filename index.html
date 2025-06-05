@@ -35,116 +35,134 @@
 	<script src="js/Common/vendor/jquery-ui-1.8.14.effects.min.js"		type="text/javascript"></script>
 	<script src="js/Common/vendor/jqplugins/jLog.min.js" 				type="text/javascript"></script>
 	<script src="js/Common/vendor/jqplugins/jquery.waitforimages.js"	type="text/javascript"></script>
+
+  <!-- APP -->
+  <script src="js/lib/moment.min.js"></script>
+  <script src="js/lib/jquery.cookie.min.js"></script>
+  <script src="js/lib/i18njs.min.js"></script>
+  <script src="js/lib/view-models.js"></script>
+  <script src="js/lib/dash.2.6.2.all.min.js"></script>
+	<script src="js/app.js"					type="text/javascript"></script>
 	
   <object id="pluginPlayer" border=0 classid="clsid:SAMSUNG-INFOLINK-PLAYER" style="display: none;"></object>
 	<object id="pluginAudio" border=0 classid="clsid:SAMSUNG-INFOLINK-AUDIO" style="display: none;"></object>
 	<object id="pluginTVMW" border=0 classid="clsid:SAMSUNG-INFOLINK-TVMW" style="display: none;"></object>
-  <style>
-    .unscaled{
-  transform:scale(2.0);
-  transform-origin:0% 0%;
-  width: 50%;
-  height: 50%;
-}
-  </style>
+
   </head>
   <body>
     <div id="root">
       <div class="site-wrapper">
         <!-- header -->
-        <div	class="header"	id="header">
-	<div	class="logo">
-		<img	src="assets/images/logo_white.png"	alt="" />
-	</div>
-	<div	class="generalInfo">
-		<div	id="guest"	class="guest">
-			Welcome, Mr. Tuấn Lê
-		</div>
-		<div	id="roomNumber"	class="room-number">
-			Room 1101
-		</div>
-		<div	id="weather"	class="wearther">
-			+30
-			<sup>
-				o
-			</sup>
-			C
-		</div>
-		<div	class="clock-area">
-			<span	class="icon">
-				<svg	xmlns="http://www.w3.org/2000/svg"	width="24"	height="24"	viewBox="0 0 24 24">
-					<path	fill="currentColor"	d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z" />
-					<rect	width="2"	height="7"	x="11"	y="6"	fill="currentColor"	rx="1">
-						<animateTransform	attributeName="transform"	dur="3600s"	repeatCount="indefinite"	type="rotate"	values="0 12 12;360 12 12" />
-					</rect>
-					<rect	width="2"	height="9"	x="11"	y="11"	fill="currentColor"	rx="1">
-						<animateTransform	attributeName="transform"	dur="10s"	repeatCount="indefinite"	type="rotate"	values="0 12 12;360 12 12" />
-					</rect>
-				</svg>
-			</span>
-			<span	id="clock">
-				10
-				<span	class="separate">
-					:
-				</span>
-				00
-			</span>
-		</div>
-		<div	id="date"	class="date">
-			August 10, 2023
-		</div>
-	</div>
-
-
-
-</div>
+        <div class="header" id="header">
+          <div class="logo">
+            <img src="assets/images/logo_white.png" alt="" />
+          </div>
+          <div class="generalInfo">
+            <div id="guest" class="guest">
+              Welcome, Mr. Tuấn Lê
+            </div>
+            <div id="roomNumber" class="room-number">
+              Room 1101
+            </div>
+            <div id="weather" class="wearther">
+              +30
+              <sup>
+                o
+              </sup>
+              C
+            </div>
+            <div class="clock-area">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z" />
+                  <rect width="2" height="7" x="11" y="6" fill="currentColor" rx="1">
+                    <animateTransform attributeName="transform" dur="3600s" repeatCount="indefinite" type="rotate"
+                      values="0 12 12;360 12 12" />
+                  </rect>
+                  <rect width="2" height="9" x="11" y="11" fill="currentColor" rx="1">
+                    <animateTransform attributeName="transform" dur="10s" repeatCount="indefinite" type="rotate"
+                      values="0 12 12;360 12 12" />
+                  </rect>
+                </svg>
+              </span>
+              <span id="clock">
+                10
+                <span class="separate">
+                  :
+                </span>
+                00
+              </span>
+            </div>
+            <div id="date" class="date">
+              August 10, 2023
+            </div>
+          </div>
+    
+    
+    
+        </div>
         <!-- header -->
-
-        <!-- main --><div id="app">
-
+    
+        <!-- main -->
+        <div id="app">
+    
           <div id="welcomePage" class="page welcome-page">
-      <video  width="100%" preload="auto" playsinline autoplay muted loop src="http://103.153.72.195:8080/video/HITEC_Scandic_Video_No_Sound.mp4"></video>
-  <div class="welcome-wrapper">
-    <h1 id="welcomeTitle">DEAR Mr. </h1>
-    <div class="welcome"><p id="welcomeBrief">Welcome</p></div>
-    <div class="button-continue">
-      <span class="a" id="welcomeContinue">Continue</span>
-    </div>
-  </div>
-  <div class="right-bottom-buttons-wrapper">
-    <div class="right-bottom-buttons">
-        <button>
-          <div class="icon" style="background-color: #FF0000"></div>
-          <div class="text">
-            <span id="buttonTelevision">Television</span>
+            <video width="100%" preload="auto" playsinline autoplay muted loop
+              src="http://103.153.72.195:8080/video/HITEC_Scandic_Video_No_Sound.mp4"></video>
+            <div class="welcome-wrapper">
+              <h1 id="welcomeTitle">DEAR <strong>Mr. Tuấn Lê</strong></h1>
+              <div class="welcome">
+                <p id="welcomeBrief">Welcome</p>
+              </div>
+              <div class="button-continue">
+                <span class="a" id="welcomeContinue">Continue</span>
+              </div>
+            </div>
+            <div class="right-bottom-buttons-wrapper">
+              <div class="right-bottom-buttons">
+                <button>
+                  <div class="icon" style="background-color: #FF0000"></div>
+                  <div class="text">
+                    <span id="buttonTelevision">Television</span>
+                  </div>
+                </button>
+                <button>
+                  <div class="icon" style="background-color: #143F7B"></div>
+                  <div class="text">
+                    <span id="buttonLanguage">Language</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div class="cover"></div>
           </div>
-        </button>
-        <button>
-          <div class="icon" style="background-color: #143F7B"></div>
-          <div class="text">
-            <span id="buttonLanguage">Language</span>
-          </div>
-        </button>
-    </div>
-  </div>
-  <div class="cover"></div>
-</div>
-
+    
         </div>
         <!-- /main -->
-
+    
         <!-- footer -->
-      <!-- /footer -->
-    </div>
+        <!-- /footer -->
+      </div>
     </div>
     <script type="text/javascript">
-      document.body.onkeydown = function(event) {
+      // Initialize the app
+      var tid = setInterval( function () {
+        if ( document.readyState != 'complete' ) return;
+        clearInterval( tid );       
+        // do your work
+        var hash = $.cookie("hash");
+        if (!hash) {
+          hash = "#/welcome";
+        }
+        vm.navigateTo(hash);
+      }, 1000);
+      // Handle keydown events for specific keys  
+      document.body.onkeydown = function (event) {
         // Prevent default action for keydown events
         event.preventDefault();
         if (event.keyCode == 29443) {
-          $('#app').html('<div class="loading"><img src="assets/images/loading.gif" alt="ENTER..."></div>');
-        } else if (event.keyCode == 88) {
-          $('#app').html('<div class="loading"><img src="assets/images/loading.gif" alt="RETURN..."></div>');
+          vm.navigateTo('#/');
         }
       };
     </script>
