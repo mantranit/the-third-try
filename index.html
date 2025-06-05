@@ -262,7 +262,7 @@
         $.cookie("hash", hash);
         var categoriesRegex = /categories\/(.+)/;
         var page = hash.split("/").pop();
-        $("#header .logo").html(page);
+        
         if (page === "welcome") {
           window.vm.welcomeVM();
         } else if (page === "") {
