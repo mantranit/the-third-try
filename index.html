@@ -167,6 +167,8 @@
         window.WelcomeModule.renderPage();
         window.WelcomeModule.renderContent();
         document.body.onkeydown = function(event) {
+          event.preventDefault();
+          event.stopPropagation();
           window.WelcomeModule.handleKeyDown(event);
         };
       };
@@ -175,7 +177,10 @@
         window.HomeModule.renderPage();
         window.HomeModule.renderMenu();
         document.body.onkeydown = function(event) {
+          event.preventDefault();
+          event.stopPropagation();
           window.HomeModule.handleKeyDown(event);
+          window.HomeModule.renderMenu();
         };
       };
 
@@ -186,6 +191,8 @@
         window.TelevisionModule.renderCursor();
         window.TelevisionModule.renderCategories();
         document.body.onkeydown = function(event) {
+          event.preventDefault();
+          event.stopPropagation();
           window.TelevisionModule.handleKeyDown(event);
         };
       };
@@ -194,6 +201,8 @@
         window.ConnectivityModule.renderPage();
         window.ConnectivityModule.renderSources();
         document.body.onkeydown = function(event) {
+          event.preventDefault();
+          event.stopPropagation();
           window.ConnectivityModule.handleKeyDown(event);
         };
       };
@@ -204,6 +213,8 @@
         window.CategoryModule.renderCategory(categoryId);
         window.CategoryModule.renderCursor();
         document.body.onkeydown = function(event) {
+          event.preventDefault();
+          event.stopPropagation();
           window.CategoryModule.handleKeyDown(event);
         };
       };
@@ -212,6 +223,8 @@
         window.WakeUpCallModule.renderPage();
         window.WakeUpCallModule.renderTrack();
         document.body.onkeydown = function(event) {
+          event.preventDefault();
+          event.stopPropagation();
           window.WakeUpCallModule.handleKeyDown(event);
         };
       };
@@ -221,6 +234,8 @@
         window.FeedbackModule.renderFeedback();
         window.FeedbackModule.scrollTo();
         document.body.onkeydown = function(event) {
+          event.preventDefault();
+          event.stopPropagation();
           window.FeedbackModule.handleKeyDown(event);
         };
       };
@@ -229,6 +244,8 @@
         window.SettingsModule.renderPage();
         window.SettingsModule.renderOptions();
         document.body.onkeydown = function(event) {
+          event.preventDefault();
+          event.stopPropagation();
           window.SettingsModule.handleKeyDown(event);
         };
       };
@@ -236,6 +253,8 @@
         window.SettingsLanguageModule.renderPage();
         window.SettingsLanguageModule.renderOptions();
         document.body.onkeydown = function(event) {
+          event.preventDefault();
+          event.stopPropagation();
           window.SettingsLanguageModule.handleKeyDown(event);
         };
       };
@@ -279,14 +298,14 @@
         window.vm.navigateTo(hash);
       }, 1000);
       // Handle keydown events for specific keys  
-      /*document.body.onkeydown = function (event) {
-        // Prevent default action for keydown events
+      document.body.onkeydown = function (event) {
         event.preventDefault();
+        event.stopPropagation();
         var keyCode = event.keyCode;
         if (window.keyboard.ENTER.includes(keyCode)) {
           window.vm.navigateTo('#/');
         }
-      };*/
+      };
     </script>
   </body>
 </html>
