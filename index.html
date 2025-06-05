@@ -37,12 +37,12 @@
 	<script src="js/Common/vendor/jqplugins/jquery.waitforimages.js"	type="text/javascript"></script>
 
   <!-- APP -->
-  <script src="js/lib/html5shiv.min.js"></script>
-  <script src="js/lib/moment.min.js"></script>
-  <script src="js/lib/jquery.cookie.min.js"></script>
-  <script src="js/lib/i18njs.min.js"></script>
-  <script src="js/lib/view-models.js"></script>
-  <script src="js/lib/dash.2.6.2.all.min.js"></script>
+  <script src="js/lib/html5shiv.min.js"					type="text/javascript"></script>
+  <script src="js/lib/moment.min.js"					type="text/javascript"></script>
+  <script src="js/lib/jquery.cookie.min.js"					type="text/javascript"></script>
+  <script src="js/lib/i18njs.min.js"					type="text/javascript"></script>
+  <script src="js/lib/view-models.js"					type="text/javascript"></script>
+  <script src="js/lib/dash.2.6.2.all.min.js"					type="text/javascript"></script>
 	<script src="js/app.js"					type="text/javascript"></script>
 	
   <object id="pluginPlayer" border=0 classid="clsid:SAMSUNG-INFOLINK-PLAYER" style="display: none;"></object>
@@ -156,13 +156,13 @@
         if (!hash) {
           hash = "#/welcome";
         }
-        vm.navigateTo(hash);
+        //vm.navigateTo(hash);
       }, 1000);
       // Handle keydown events for specific keys  
       document.body.onkeydown = function (event) {
         // Prevent default action for keydown events
         event.preventDefault();
-        if (event.keyCode == 29443) {
+        if (window.keyboard.checkKeyCode("ENTER", keyCode)) {
           vm.navigateTo('#/');
         }
       };
