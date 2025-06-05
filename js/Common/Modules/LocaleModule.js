@@ -1,0 +1,155 @@
+$(function() {
+  var en_locales = {
+    header: {
+      Welcome: "Welcome, {{name}}",
+      Room: "Room {{roomNumber}}",
+    },
+    welcome: {
+      Dear: "DEAR, ",
+      Brief:
+        "We are delighted that you have chosen our hotel. On behalf of the entire team of the SEASHELLS, I extend a very warm welcome to you and trust that your stay with us will be pleasant and comfortable.",
+      Continue: "Continue",
+    },
+    Television: "Television",
+    Connectivity: "Connectivity",
+
+    Dining: "Dining",
+    Breakfasts: "Breakfasts",
+    Starters: "Starters",
+    Salads: "Salads",
+    Soups: "Soups",
+    Mains: "Mains",
+    Desserts: "Desserts",
+    Drinks: "Drinks",
+    "Hot Drinks": "Hot Drinks",
+    Alcohol: "Alcohol",
+    Cocktails: "Cocktails",
+    Beer: "Beer",
+    Wine: "Wine",
+    Whiskey: "Whiskey",
+
+    "Restaurants & Bars": "Restaurants & Bars",
+    "Spa & Fitness": "Spa & Fitness",
+    Shopping: "Shopping",
+    "My Orders": "My Orders",
+    Movies: "Movies",
+    Radio: "Radio",
+    "Hotel Information": "Hotel Information",
+    "Room Service": "Room Service",
+    "Wake-up Call": "Wake-up Call",
+    Messages: "Messages",
+    Feedback: "Feedback",
+    "Check Bill": "Check Bill",
+    "Flight Info": "Flight Info",
+    Settings: "Settings",
+    Language: "Language",
+    Back: "Back",
+    Navigation: "Navigation",
+    Select: "Select",
+    Confirm: "Confirm",
+
+    pers: "pers",
+    "Select time": "Select time",
+    Continue: "Continue",
+    "Add to cart": "Add to cart",
+    Configuration: "Configuration",
+    "Enter room number": "Enter room number",
+    OK: "OK",
+
+    "Application Language": "Application Language",
+    "Parental Lock": "Parental Lock",
+    Enabled: "Enabled",
+    Disabled: "Disabled",
+    "Room Number": "Room Number",
+    "Choose language": "Choose language",
+
+    "Confirm each action by entering your PIN":
+      "Confirm each action by entering your PIN",
+    "Please remember this PIN. It will be used for action confirmation. To reset the PIN contact the reception.":
+      "Please remember this PIN. It will be used for action confirmation. To reset the PIN contact the reception.",
+    PIN: "PIN",
+    "Enter current PIN to disable Parental Lock":
+      "Enter current PIN to disable Parental Lock",
+
+    "Select Time & Date": "Select Time & Date",
+    "Cancel Wake-up": "Cancel Wake-up",
+    "Change Time": "Change Time",
+    "Your wake-up service is set to {{hour}}":
+      "Your wake-up service is set to {{hour}}",
+    Alert: "Alert",
+
+    "Feedback form": "Feedback form",
+    Atmosphere: "Atmosphere",
+    Cleanness: "Cleanness",
+    "Food quality": "Food quality",
+    "Customer service": "Customer service",
+    "Why did you choose us?": "Why did you choose us?",
+    Location: "Location",
+    Price: "Price",
+    Recommendations: "Recommendations",
+    Send: "Send",
+    "Feedback sent. Thank you.": "Feedback sent. Thank you.",
+
+    Watch: "Watch",
+    "TV Channels": "TV Channels",
+    "{{item}} of {{total}}": "{{item}} of {{total}}",
+    "Any category": "Any category",
+    Volume: "Volume",
+    Channels: "Channels",
+    Category: "Category",
+    Any: "Any",
+    Cartoon: "Cartoon",
+    News: "News",
+    Sports: "Sports",
+    Music: "Music",
+    Kids: "Kids",
+    "Movies & Series": "Movies & Series",
+    Culture: "Culture",
+    Discovery: "Discovery",
+    Drama: "Drama",
+    Fashion: "Fashion",
+
+    "Delivery time": "Delivery time",
+    Now: "Now",
+    "You may ask for immediate delivery of your order into your room or select delivery time at your convinience.":
+      "You may ask for immediate delivery of your order into your room or select delivery time at your convinience.",
+    "Order Confirm": "Order Confirm",
+    "Back to Main Menu": "Back to Main Menu",
+    "{{quantity}} {{unit}}": "{{quantity}} {{unit}}",
+    "YOUR ORDER": "YOUR ORDER",
+    TOTAL: "TOTAL",
+
+    "Your request is sent successfully": "Your request is sent successfully",
+    "Thank you for your order! You can track the status of your order or cancel it in My Orders section.":
+      "Thank you for your order! You can track the status of your order or cancel it in My Orders section.",
+
+    Details: "Details",
+    CART: "CART",
+    "PLACED ORDER": "PLACED ORDER",
+    COMPLETED: "COMPLETED",
+    CANCELLED: "CANCELLED",
+    "Restaurant booking": "Restaurant booking",
+
+    "Order Details": "Order Details",
+    "Repeat order": "Repeat order",
+
+    "Connect My Device": "Connect My Device",
+    "Screen Sharing": "Screen Sharing",
+    "Turn on MiraCast/ScreenShare": "Turn on MiraCast/ScreenShare",
+    Bluetooth: "Bluetooth",
+    "Display the Bluetooth": "Display the Bluetooth",
+    USB: "USB",
+    "Open USB Browser": "Open USB Browser",
+    "Sources List": "Sources List",
+    "Display Sources list": "Display Sources list",
+    "Apple TV": "Apple TV",
+    "Display the Apple TV": "Display the Apple TV",
+    ChromeCast: "ChromeCast",
+    "Display the ChromeCast": "Display the ChromeCast",
+
+    "Bluetooth pairing with name": "Bluetooth pairing with name",
+  };
+
+  // i18n.add(language, [namespace,] locales);
+  i18njs.add("en", en_locales);
+});

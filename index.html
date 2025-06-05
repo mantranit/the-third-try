@@ -43,7 +43,21 @@
   <script src="js/lib/i18njs.min.js"					type="text/javascript"></script>
   <script src="js/lib/view-models.js"					type="text/javascript"></script>
   <script src="js/lib/dash.2.6.2.all.min.js"					type="text/javascript"></script>
-	<script src="js/app.js"					type="text/javascript"></script>
+
+  <!-- MODDULES -->
+  <script src="js/Common/Modules/LocaleModule.js"					type="text/javascript"></script>
+  <script src="js/Common/Modules/KeyboardModule.js"					type="text/javascript"></script>
+  <script src="js/Common/Modules/WelcomeModule.js"					type="text/javascript"></script>
+  <script src="js/Common/Modules/HomeModule.js"					type="text/javascript"></script>
+  <!--script src="js/Common/Modules/TelevisionModule.js"					type="text/javascript"></script>
+  <script src="js/Common/Modules/ConnectivityModule.js"					type="text/javascript"></script>
+  <script src="js/Common/Modules/CategoryModule.js"					type="text/javascript"></script>
+  <script src="js/Common/Modules/WakeUpCallModule.js"					type="text/javascript"></script>
+  <script src="js/Common/Modules/FeedbackModule.js"					type="text/javascript"></script>
+  <script src="js/Common/Modules/SettingsModule.js"					type="text/javascript"></script>
+  <script src="js/Common/Modules/SettingsLanguageModule.js"					type="text/javascript"></script>
+	<!--script src="js/app.js"					type="text/javascript"></script-->
+  <script src="js/Common/Modules/AppModule.js"					type="text/javascript"></script>
 	
   <object id="pluginPlayer" border=0 classid="clsid:SAMSUNG-INFOLINK-PLAYER" style="display: none;"></object>
 	<object id="pluginAudio" border=0 classid="clsid:SAMSUNG-INFOLINK-AUDIO" style="display: none;"></object>
@@ -108,7 +122,7 @@
         <!-- main -->
         <div id="app">
     
-          <div id="welcomePage" class="page welcome-page">
+          <!--div id="welcomePage" class="page welcome-page">
             <video width="100%" preload="auto" playsinline autoplay muted loop
               src="http://103.153.72.195:8080/video/HITEC_Scandic_Video_No_Sound.mp4"></video>
             <div class="welcome-wrapper">
@@ -137,7 +151,7 @@
               </div>
             </div>
             <div class="cover"></div>
-          </div>
+          </div-->
     
         </div>
         <!-- /main -->
@@ -148,6 +162,112 @@
     </div>
     <script type="text/javascript">
       // Initialize the app
+      window.vm = {};
+      window.vm.welcomeVM = function(route, param) {
+        window.WelcomeModule.renderPage();
+        window.WelcomeModule.renderContent();
+        document.body.onkeydown = function(event) {
+          window.WelcomeModule.handleKeyDown(event);
+        };
+      };
+
+      window.vm.homeVM = function(route, param) {
+        window.HomeModule.renderPage();
+        window.HomeModule.renderMenu();
+        document.body.onkeydown = function(event) {
+          window.HomeModule.handleKeyDown(event);
+        };
+      };
+
+      window.vm.televisionVM = function(route, param) {
+        window.TelevisionModule.renderPage();
+        window.TelevisionModule.initIPTVPlayer();
+        window.TelevisionModule.renderChannels();
+        window.TelevisionModule.renderCursor();
+        window.TelevisionModule.renderCategories();
+        document.body.onkeydown = function(event) {
+          window.TelevisionModule.handleKeyDown(event);
+        };
+      };
+
+      window.vm.connectivityVM = function(route, param) {
+        window.ConnectivityModule.renderPage();
+        window.ConnectivityModule.renderSources();
+        document.body.onkeydown = function(event) {
+          window.ConnectivityModule.handleKeyDown(event);
+        };
+      };
+
+      window.vm.categoryVM = function(route, param) {
+        var categoryId = route.split("/").pop();
+        window.CategoryModule.renderPage();
+        window.CategoryModule.renderCategory(categoryId);
+        window.CategoryModule.renderCursor();
+        document.body.onkeydown = function(event) {
+          window.CategoryModule.handleKeyDown(event);
+        };
+      };
+
+      window.vm.wakeUpCallVM = function(route, param) {
+        window.WakeUpCallModule.renderPage();
+        window.WakeUpCallModule.renderTrack();
+        document.body.onkeydown = function(event) {
+          window.WakeUpCallModule.handleKeyDown(event);
+        };
+      };
+
+      window.vm.feedbackVM = function(route, param) {
+        window.FeedbackModule.renderPage();
+        window.FeedbackModule.renderFeedback();
+        window.FeedbackModule.scrollTo();
+        document.body.onkeydown = function(event) {
+          window.FeedbackModule.handleKeyDown(event);
+        };
+      };
+
+      window.vm.settingsVM = function(route, param) {
+        window.SettingsModule.renderPage();
+        window.SettingsModule.renderOptions();
+        document.body.onkeydown = function(event) {
+          window.SettingsModule.handleKeyDown(event);
+        };
+      };
+      window.vm.settingsLanguageVM = function(route, param) {
+        window.SettingsLanguageModule.renderPage();
+        window.SettingsLanguageModule.renderOptions();
+        document.body.onkeydown = function(event) {
+          window.SettingsLanguageModule.handleKeyDown(event);
+        };
+      };
+      window.vm.navigateTo = function(hash) {
+        $.cookie("hash", hash);
+        var categoriesRegex = /categories\/(.+)/;
+        var page = hash.split("/").pop();
+        $("#header .logo").html(page);
+        if (page === "welcome") {
+          window.vm.welcomeVM();
+        } else if (page === "") {
+          window.vm.homeVM();
+        } else if (page === "television") {
+          window.vm.televisionVM();
+        } else if (page === "connectivity") {
+          window.vm.connectivityVM();
+        } else if (categoriesRegex.test(hash)) {
+          window.vm.categoryVM(hash);
+        } else if (page === "product") {
+          window.vm.productVM();
+        } else if (page === "productDetail") {
+          window.vm.productDetailVM();
+        } else if (page === "wake-up-call") {
+          window.vm.wakeUpCallVM();
+        } else if (page === "feedback") {
+          window.vm.feedbackVM();
+        } else if (page === "settings") {
+          window.vm.settingsVM();
+        } else if (page === "settings-language") {
+          window.vm.settingsLanguageVM();
+        }
+      };
       var tid = setInterval( function () {
         if ( document.readyState != 'complete' ) return;
         clearInterval( tid );       
@@ -156,16 +276,17 @@
         if (!hash) {
           hash = "#/welcome";
         }
-        //vm.navigateTo(hash);
+        window.vm.navigateTo(hash);
       }, 1000);
       // Handle keydown events for specific keys  
-      document.body.onkeydown = function (event) {
+      /*document.body.onkeydown = function (event) {
         // Prevent default action for keydown events
         event.preventDefault();
-        if (window.keyboard.checkKeyCode("ENTER", keyCode)) {
-          vm.navigateTo('#/');
+        var keyCode = event.keyCode;
+        if (window.keyboard.ENTER.includes(keyCode)) {
+          window.vm.navigateTo('#/');
         }
-      };
+      };*/
     </script>
   </body>
 </html>
