@@ -420,9 +420,9 @@ table {
 */
 /*
 @font-face {
-  font-family: "Gotham Bold";
+  font-family: "SVN-GothamBold";
   font-weight: normal;
-  src: local("Gotham Bold"), url(../fonts/SVN-Gotham-Bold.svg) format("svg");
+  src: local("SVN-GothamBold"), url(../fonts/SVN-Gotham-Bold.svg) format("svg");
 }
 
 @font-face {
@@ -1359,7 +1359,7 @@ strong {
   font-size: 32px;
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  font-family: "Gotham Bold", Arial, sans-serif;
+  font-family: "SVN-GothamBold", Arial, sans-serif;
 }
 .television-wrapper .television-header .television-title span {
   font-size: 23px;
@@ -1583,7 +1583,7 @@ strong {
 }
 .television-player .channel-title {
   margin-top: 10px;
-  font-family: "Gotham Bold", Arial, sans-serif;
+  font-family: "SVN-GothamBold", Arial, sans-serif;
   font-size: 24px;
   text-transform: capitalize;
 }
@@ -1811,7 +1811,7 @@ strong {
 }
 .sub-category-item .brief .subtitle .price {
   color: rgba(255, 255, 255, 0.6);
-  font-family: "Gotham Bold";
+  font-family: "SVN-GothamBold";
   font-size: 20px;
 }
 
