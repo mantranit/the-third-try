@@ -26,6 +26,8 @@ $(function() {
       } else if (window.keyboard.BACK.includes(keyCode)) {
         window.vm.navigateTo("#/settings");
       }
+
+      this.renderOptions();
     },
 
     renderOptions: function () {

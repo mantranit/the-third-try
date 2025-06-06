@@ -163,6 +163,8 @@ $(function() {
       } else if (window.keyboard.BACK.includes(keyCode)) {
         window.vm.navigateTo("#/welcome");
       }
+
+      this.renderMenu();
     },
 
     renderMenu: function () {

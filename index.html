@@ -180,7 +180,6 @@
           event.preventDefault();
           event.stopPropagation();
           window.HomeModule.handleKeyDown(event);
-          window.HomeModule.renderMenu();
         };
       };
 
@@ -188,12 +187,12 @@
         window.TelevisionModule.renderPage();
         window.TelevisionModule.renderChannels();
         window.TelevisionModule.initIPTVPlayer();
-        //window.TelevisionModule.renderCursor();
-        //window.TelevisionModule.renderCategories();
+        window.TelevisionModule.renderCursor();
+        window.TelevisionModule.renderCategories();
         document.body.onkeydown = function(event) {
           event.preventDefault();
           event.stopPropagation();
-          //window.TelevisionModule.handleKeyDown(event);
+          window.TelevisionModule.handleKeyDown(event);
         };
       };
 
@@ -247,7 +246,6 @@
           event.preventDefault();
           event.stopPropagation();
           window.SettingsModule.handleKeyDown(event);
-          window.SettingsModule.renderOptions();
         };
       };
       window.vm.settingsLanguageVM = function(route, param) {
@@ -257,7 +255,6 @@
           event.preventDefault();
           event.stopPropagation();
           window.SettingsLanguageModule.handleKeyDown(event);
-          window.SettingsLanguageModule.renderOptions();
         };
       };
       window.vm.navigateTo = function(hash) {

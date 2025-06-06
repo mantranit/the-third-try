@@ -28,6 +28,8 @@ $(function () {
       } else if (window.keyboard.BACK.includes(keyCode)) {
         window.vm.navigateTo("#/");
       }
+
+      this.renderOptions();
     },
 
     renderOptions: function () {
