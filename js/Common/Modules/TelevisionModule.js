@@ -153,6 +153,9 @@ $(function () {
           $("#header").show();
           $("#televisionPlayerInfo").show();
         } else {
+          if (navigator.userAgent.search(/Maple/) > -1) {
+            pluginIPTV.Close();
+          }
           window.televisionFilterKeyboard.selected = [];
           vm.navigateTo("#/");
         }
@@ -183,12 +186,18 @@ $(function () {
 
         // Samsung +2015
         if (navigator.userAgent.search(/Maple/) > -1) {
-          pluginIPTV.Open("IPTV", "1.010", "IPTV");
-          pluginObjectTVMW.SetSource(48);
-          pluginIPTV.Execute("SetPlayerWindow", 0, 0, 0, 1920, 1080);
+          try {
+            pluginIPTV.Open("IPTV", "1.010", "IPTV");
+            pluginObjectTVMW.SetSource(48);
+            pluginIPTV.Execute("SetPlayerWindow", 0, 0, 0, 1920, 1080);
 
-          pluginIPTV.Execute("SIInit");
-          pluginIPTV.Execute("SetTuneURL", url, 0);
+            pluginIPTV.Execute("SIInit");
+            pluginIPTV.Execute("SetTuneURL", url, 0);
+            pluginIPTV.style.zIndex = 1000;
+            pluginIPTV.style.opacity = 1;
+          } catch (e) {
+            $("#header").append(e.message);
+          }
         }
 
         $("#channelTitle").html(activeChannel.name);
