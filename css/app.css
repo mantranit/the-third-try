@@ -790,6 +790,10 @@ body {
   background-color: black;
 }
 
+.welcome-page, .home-page {
+  background: none;
+}
+
 .cover {
   background: #000;
   position: absolute;
@@ -1095,6 +1099,8 @@ strong {
 /* Demo styles */
 .video-background {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 .video-background video {
   width: 100%;

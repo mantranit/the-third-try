@@ -69,3 +69,15 @@ video {
 	height: auto;
 	aspect-ratio: 16/9;
 }
+
+.loading {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 1);
+	z-index: 200;
+	background: url(../assets/images/container_bg_splash.jpg) center top no-repeat;
+	background-size: cover;
+}
