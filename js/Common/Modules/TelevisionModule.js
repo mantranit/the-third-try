@@ -193,33 +193,40 @@ $(function () {
         console.error("Error initializing video player:", e);
       }
     },
-    // changeSourceIPTV: function () {
-    //   if (!$("#televisionPage").is(":visible")) {
-    //     return;
-    //   }
-    //   var activeChannel =
-    //     window.filteredChannels[
-    //       window.televisionKeyboard.cursorX +
-    //         window.televisionKeyboard.cursorY * 4
-    //     ];
-    //   if (activeChannel) {
-    //     var url = "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
-    //       url2 = `${location.protocol}//${activeChannel.server}/dash/master-${activeChannel.ipAddress}/live.mpd`;
-    //     console.log("=======================", url2, activeChannel.name);
-    //     window.televisionKeyboard.iptvPlayer.attachSource(url2);
+    changeSourceIPTV: function () {
+      if (!$("#televisionPage").is(":visible")) {
+        return;
+      }
+      var activeChannel =
+        window.filteredChannels[
+          window.televisionKeyboard.cursorX +
+            window.televisionKeyboard.cursorY * 4
+        ];
+      if (activeChannel) {
+        var url = "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
+          url2 =
+            location.protocol +
+            "//" +
+            activeChannel.server +
+            "/dash/master-" +
+            activeChannel.ipAddress +
+            "/live.mpd",
+          url3 = "udp://" + activeChannel.ipAddress + ":" + activeChannel.port;
+        console.log("=======================", url2, url3, activeChannel.name);
+        window.televisionKeyboard.iptvPlayer.attachSource(url3);
 
-    //     $("#channelTitle").html(activeChannel.name);
-    //     $("#channelCategory").html(activeChannel.category.join(", "));
+        $("#channelTitle").html(activeChannel.name);
+        $("#channelCategory").html(activeChannel.category.join(", "));
 
-    //     if ($("#televisionPlayer").hasClass("fullscreen")) {
-    //       $("#televisionPlayerInfo").show();
-    //       this.timeHideTVControls = setTimeout(() => {
-    //         $("#header").fadeOut(2000);
-    //         $("#televisionPlayerInfo").fadeOut(2000);
-    //       }, 3000);
-    //     }
-    //   }
-    // },
+        if ($("#televisionPlayer").hasClass("fullscreen")) {
+          $("#televisionPlayerInfo").show();
+          this.timeHideTVControls = setTimeout(function () {
+            $("#header").fadeOut(2000);
+            $("#televisionPlayerInfo").fadeOut(2000);
+          }, 3000);
+        }
+      }
+    },
     renderCursor: function () {
       if (!$("#televisionPage").is(":visible")) {
         return;
@@ -252,7 +259,7 @@ $(function () {
           televisionOuter.scrollTop = bottom - televisionOuter.clientHeight;
         }
 
-        // this.changeSourceIPTV();
+        this.changeSourceIPTV();
       }
     },
     renderChannels: function () {
