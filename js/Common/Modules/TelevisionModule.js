@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
   window.televisionKeyboard = {
     cursorX: 0,
     cursorY: 0,
@@ -175,15 +175,15 @@ $(function() {
             activeChannel.server +
             "/dash/master-" +
             activeChannel.ipAddress +
-            "/live.mpd";
-        console.log("=======================", url2, activeChannel.name);
+            "/live.mpd",
+          url3 = "udp://" + activeChannel.ipAddress + ":" + activeChannel.port;
+        console.log("=======================", url2, url3, activeChannel.name);
         video = document.getElementById("iptv-video");
         window.televisionKeyboard.iptvPlayer = dashjs.MediaPlayer().create();
         window.televisionKeyboard.iptvPlayer.initialize();
         window.televisionKeyboard.iptvPlayer.attachView(video);
         window.televisionKeyboard.iptvPlayer.setAutoPlay(true);
-        window.televisionKeyboard.iptvPlayer.attachSource(url2);
-        window.televisionKeyboard.iptvPlayer.play();
+        window.televisionKeyboard.iptvPlayer.attachSource(url3);
 
         $("#channelTitle").html(activeChannel.name);
         $("#channelCategory").html(activeChannel.category.join(", "));
