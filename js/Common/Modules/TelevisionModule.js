@@ -146,6 +146,10 @@ $(function () {
           if (this.timeHideTVControls) {
             clearTimeout(this.timeHideTVControls);
           }
+          if (navigator.userAgent.search(/Maple/) > -1) {
+            pluginIPTV.Execute('StopCurrentChannel', 0);
+						pluginIPTV.Execute('FreeNowPlayingInfo', 0);
+          }
           $("#header").show();
           $("#televisionPlayerInfo").show();
         } else {
@@ -169,23 +173,23 @@ $(function () {
             window.televisionKeyboard.cursorX +
               window.televisionKeyboard.cursorY * 4
           ];
-        var video,
-          url = "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
-          url2 =
-            location.protocol +
-            "//" +
-            activeChannel.server +
-            "/dash/master-" +
-            activeChannel.ipAddress +
-            "/live.mpd",
-          url3 = "udp://" + activeChannel.ipAddress + ":" + activeChannel.port;
-        console.log("=======================", url2, url3, activeChannel.name);
-        video = document.getElementById("iptv-video");
-        window.televisionKeyboard.iptvPlayer = dashjs.MediaPlayer().create();
-        window.televisionKeyboard.iptvPlayer.initialize();
-        window.televisionKeyboard.iptvPlayer.attachView(video);
-        window.televisionKeyboard.iptvPlayer.setAutoPlay(true);
-        window.televisionKeyboard.iptvPlayer.attachSource(url3);
+        var url =
+          "rtp://" +
+          activeChannel.ipAddress +
+          ":" +
+          activeChannel.port +
+          "|HW|NO_RTCP";
+        console.log("=======================", url, activeChannel.name);
+
+        // Samsung +2015
+        if (navigator.userAgent.search(/Maple/) > -1) {
+          pluginIPTV.Open("IPTV", "1.010", "IPTV");
+          pluginObjectTVMW.SetSource(48);
+          pluginIPTV.Execute("SetPlayerWindow", 0, 0, 0, 1920, 1080);
+
+          pluginIPTV.Execute("SIInit");
+          pluginIPTV.Execute("SetTuneURL", url, 0);
+        }
 
         $("#channelTitle").html(activeChannel.name);
         $("#channelCategory").html(activeChannel.category.join(", "));
@@ -203,17 +207,17 @@ $(function () {
             window.televisionKeyboard.cursorY * 4
         ];
       if (activeChannel) {
-        var url = "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
-          url2 =
-            location.protocol +
-            "//" +
-            activeChannel.server +
-            "/dash/master-" +
-            activeChannel.ipAddress +
-            "/live.mpd",
-          url3 = "udp://" + activeChannel.ipAddress + ":" + activeChannel.port;
-        console.log("=======================", url2, url3, activeChannel.name);
-        window.televisionKeyboard.iptvPlayer.attachSource(url3);
+        var url =
+          "rtp://" +
+          activeChannel.ipAddress +
+          ":" +
+          activeChannel.port +
+          "|HW|NO_RTCP";
+        console.log("=======================", url, activeChannel.name);
+        // Samsung +2015
+        if (navigator.userAgent.search(/Maple/) > -1) {
+          pluginIPTV.Execute("SetTuneURL", url, 0);
+        }
 
         $("#channelTitle").html(activeChannel.name);
         $("#channelCategory").html(activeChannel.category.join(", "));
