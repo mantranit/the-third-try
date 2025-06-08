@@ -1,0 +1,49 @@
+// SAMSUNG
+var samsungCommon;  // Key management ops
+var samsungSEF;     // IPTV ops ('IPTV')
+var samsungSEFNAVI; // Network ops ('Network')
+var samsungSEFT;    // Closed captions ('TV')
+var samsungSEFW;    // Closed captions ('Window')
+var samsungSEFTask; // Task manager ops (e.g. start screen mirror)
+var samsungWindow;  // IPTV ops (screen sizing, RF channel changing)
+var samsungTime;    // EPG ops
+var samsungTV;      // EPG ops
+var samsungTVMW;    // Source select ops
+var samsungWidgetAPI; // misc API ops
+var PL_TV_EVENT_CHANGE_POWER_STATE = 211;
+
+var samsungNetEvent = function (e, data1, data2)
+{
+	var conn = data1 == 1 ? 'connected' : 'disconnected';
+	var type = false;
+
+	switch (e)
+	{
+		case 0:
+			type = 'network cable';
+			break;
+
+		case 1:
+			type = 'wifi';
+			break;
+
+		case 2:
+			//type = 'router';
+			break;
+	}
+
+	cl('SAMSUNG: net event: ' + type + ' ' + conn + ', data2[' + data2 + ']');
+
+	if (conn == 'disconnected' && type)
+	{
+		ajaxPing(100, 'tv ' + type + ' disconnected', '', 'samsung_net_event');
+
+		/*pc.reloadNotify(
+			'Wired network connection lost.. Please wait for menu reload..',
+			'setInterval',
+			10000
+		);
+		*/
+	}
+};
+

@@ -233,10 +233,13 @@ $(function () {
 
         if ($("#televisionPlayer").hasClass("fullscreen")) {
           $("#televisionPlayerInfo").show();
+          if (this.timeHideTVControls) {
+            clearTimeout(this.timeHideTVControls);
+          }
           this.timeHideTVControls = setTimeout(function () {
-            $("#header").fadeOut(2000);
-            $("#televisionPlayerInfo").fadeOut(2000);
-          }, 3000);
+            $("#header").hide();
+            $("#televisionPlayerInfo").hide();
+          }, 4000);
         }
       }
     },
