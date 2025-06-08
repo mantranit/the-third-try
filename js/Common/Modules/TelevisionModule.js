@@ -12,10 +12,21 @@ $(function () {
     itemInRow: 4,
     timeHideTVControls: 0,
     handleKeyDown: function (event) {
+      const keyCode = event.keyCode;
+      if (!$("#root").is(":visible")) {
+        if (window.keyboard.BACK.includes(keyCode)) {
+          $("#root").show();
+          if (navigator.userAgent.search(/Maple/) > -1) {
+            pluginIPTV.Execute("StopCurrentChannel", 0);
+            pluginIPTV.Execute("FreeNowPlayingInfo", 0);
+          }
+          return;
+        }
+      }
       if (!$("#televisionPage").is(":visible")) {
         return;
       }
-      const keyCode = event.keyCode;
+      // const keyCode = event.keyCode;
       if ($("#filterChannels").is(":visible")) {
         if (window.keyboard.TOP.includes(keyCode)) {
           window.televisionFilterKeyboard.cursor = Math.max(
@@ -133,9 +144,11 @@ $(function () {
               window.televisionKeyboard.cursorY * this.itemInRow
           ];
         if (activeChannel) {
-          $("#televisionPlayer")
-            .removeClass("not-fullscreen")
-            .addClass("fullscreen");
+          // $("#televisionPlayer")
+          //   .removeClass("not-fullscreen")
+          //   .addClass("fullscreen");
+          $("#root").hide();
+          this.initIPTVPlayer();
         }
       } else if (window.keyboard.BACK.includes(keyCode)) {
         if ($("#televisionPlayer").hasClass("fullscreen")) {
@@ -147,8 +160,8 @@ $(function () {
             clearTimeout(this.timeHideTVControls);
           }
           if (navigator.userAgent.search(/Maple/) > -1) {
-            pluginIPTV.Execute('StopCurrentChannel', 0);
-						pluginIPTV.Execute('FreeNowPlayingInfo', 0);
+            pluginIPTV.Execute("StopCurrentChannel", 0);
+            pluginIPTV.Execute("FreeNowPlayingInfo", 0);
           }
           $("#header").show();
           $("#televisionPlayerInfo").show();
@@ -187,14 +200,13 @@ $(function () {
         // Samsung +2015
         if (navigator.userAgent.search(/Maple/) > -1) {
           try {
-            pluginIPTV.Open("IPTV", "1.010", "IPTV");
+            pluginIPTV.Open("IPTV", "1.000", "IPTV");
             pluginObjectTVMW.SetSource(48);
             pluginIPTV.Execute("SetPlayerWindow", 0, 0, 0, 1920, 1080);
 
             pluginIPTV.Execute("SIInit");
             pluginIPTV.Execute("SetTuneURL", url, 0);
-            pluginIPTV.style.zIndex = 1000;
-            pluginIPTV.style.opacity = 1;
+            pluginIPTV.Execute("StartCurrentChannel", 0);
           } catch (e) {
             $("#header").append(e.message);
           }

@@ -8,6 +8,24 @@
     <title>Document</title>
     <script type="text/javascript">
 	
+      // Initialize the app
+      var widgetAPI;
+      var tvKey;
+      var pluginObj;
+      var pluginIPTV;
+      var pluginObjectTVMW;
+      var pluginWindow;
+      var pluginTV;
+      var pluginDownload;
+
+      var PL_TV_EVENT_CHANGE_POWER_STATE = 211;
+      var PL_TV_EVENT_CHANNEL_CHANGED = 113;
+      var PL_TV_EVENT_NO_SIGNAL = 101;
+      var PL_TV_EVENT_TUNE_SUCCESS = 103;
+      var PL_TV_EVENT_PROGRAM_CHANGED = 204;
+      var PL_TV_EVENT_SOURCE_CHANGED = 114;
+      var PL_TV_EVENT_SOURCE_CONNECTED = 126;
+
 		// This is stupid, I can just let them fail but I don't like the errors.
 		if (navigator.userAgent.search(/Maple/) > -1) {			
 			document.write('<script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/TVKeyValue.js"></scri'+'pt>');
@@ -138,24 +156,6 @@
       </div>
     </div>
     <script type="text/javascript">
-      // Initialize the app
-      var widgetAPI;
-      var tvKey;
-      var pluginObj;
-      var pluginIPTV;
-      var pluginObjectTVMW;
-      var pluginWindow;
-      var pluginTV;
-      var pluginDownload;
-
-      var PL_TV_EVENT_CHANGE_POWER_STATE = 211;
-      var PL_TV_EVENT_CHANNEL_CHANGED = 113;
-      var PL_TV_EVENT_NO_SIGNAL = 101;
-      var PL_TV_EVENT_TUNE_SUCCESS = 103;
-      var PL_TV_EVENT_PROGRAM_CHANGED = 204;
-      var PL_TV_EVENT_SOURCE_CHANGED = 114;
-      var PL_TV_EVENT_SOURCE_CONNECTED = 126;
-
       window.vm = {};
       window.vm.welcomeVM = function(route, param) {
         window.WelcomeModule.renderPage();
@@ -180,7 +180,6 @@
       window.vm.televisionVM = function(route, param) {
         window.TelevisionModule.renderPage();
         window.TelevisionModule.renderChannels();
-        window.TelevisionModule.initIPTVPlayer();
         window.TelevisionModule.renderCursor();
         window.TelevisionModule.renderCategories();
         document.body.onkeydown = function(event) {
