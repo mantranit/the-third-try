@@ -206,7 +206,6 @@ $(function () {
 
             pluginIPTV.Execute("SIInit");
             pluginIPTV.Execute("SetTuneURL", url, 0);
-            pluginIPTV.Execute("StartCurrentChannel", 0);
           } catch (e) {
             $("#header").append(e.message);
           }
